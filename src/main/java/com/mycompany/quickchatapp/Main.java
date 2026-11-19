@@ -81,34 +81,31 @@ public class Main {
         boolean running = true;
         while(running){
             System.out.println("\nMenu:");
-                System.out.println("1) Send Messages");
-                System.out.println("2) Show recently sent messages");
-                System.out.println("3) Stored Messages");          // ← NEW Part 3
-                System.out.println("4) Quit");                      // ← renumbered
-                System.out.print("Choose an option: ");
+            System.out.println("1) Send Messages");
+            System.out.println("2) Show recently sent messages");
+            System.out.println("3) Stored Messages");          // ← NEW Part 3
+            System.out.println("4) Quit");                      // ← renumbered
+            System.out.print("Choose an option: ");
             
             String choice = scanner.nextLine();
             
             switch(choice){
                 case "1":
-                        sendMessages(scanner, manager, firstName + " " + lastName);
-                        break;
-                    case "2":
-                        System.out.println("Coming Soon");
-                        break;
-                    case "3":
-                        storedMessagesMenu(scanner, manager);          // ← NEW Part 3
-                        break;
-                    case "4":
-                        System.out.println("Quitting QuickChat. Goodbye!");
-                        running = false;
-                        break;
-                    default:
-                        System.out.println("Invalid option. Please choose 1, 2, 3 or 4.");
+                    sendMessages(scanner, manager, firstName + " " + lastName);
+                    break;
+                case "2":
+                    System.out.println("Coming Soon");
+                    break;
+                case "3":
+                    storedMessagesMenu(scanner, manager);          // ← NEW Part 3
+                    break;
+                case "4":
+                    System.out.println("Quitting QuickChat. Goodbye!");
+                    running = false;
+                    break;
+                default:
+                    System.out.println("Invalid option. Please choose 1, 2, 3 or 4.");
             }
-        }
-    } else {
-            System.out.println("Registration failed. Please restart the application and try again.");
         }
         
         // Close the scanner
@@ -149,6 +146,7 @@ public class Main {
             }
             
             Message msg = new Message(messageID, i, recipient, messageText);
+            msg.setSender(senderName);                      // ← FIXED: set sender for Part 3
 
             String recipientCheck = msg.checkRecipientCell();
             if (!recipientCheck.equals("Cell phone number successfully captured.")) {
@@ -185,6 +183,7 @@ public class Main {
         // FIXED: Calling the static method directly from the class
         System.out.println("\nTotal messages sent so far: " + Message.returnTotalMessages());
     }
+    
     // ══════════════════════════════════════════════════════════════
     // PART 3 – Stored Messages submenu
     // ══════════════════════════════════════════════════════════════
@@ -273,3 +272,4 @@ public class Main {
             }
         }
     }
+}
