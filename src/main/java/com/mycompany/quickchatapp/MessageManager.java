@@ -41,10 +41,9 @@ public class MessageManager {
                 String hash      = obj.getString("MessageHash");
                 String recipient = obj.getString("Recipient");
                 String text      = obj.getString("Message");
+                String sender    = obj.optString("Sender", null);   // ← NEW: null-safe for old files
 
-                Message msg = new Message(id, 0, recipient, text); // 4-param constructor
-                msg.setMessageHash(hash);  // restore original hash
-                msg.setStatus("Stored");
+                Message msg = new Message(id, 0, sender, recipient, text, hash, "Stored");  // ← 7-param ctor
                 messages.add(msg);
             }
         } catch (IOException e) {
