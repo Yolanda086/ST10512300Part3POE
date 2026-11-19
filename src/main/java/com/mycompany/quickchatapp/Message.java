@@ -118,7 +118,8 @@ public class Message {
         jsonObject.put("MessageHash", this.messageHash);
         jsonObject.put("Recipient", this.recipient);
         jsonObject.put("Message", this.messageText);
-
+        jsonObject.put("Sender", this.sender);          // ← NEW: persist sender for Part 3 report
+        
         try (FileWriter file = new FileWriter("messages.json", true)) {
             file.write(jsonObject.toString() + "\n");
         } catch (IOException e) {
