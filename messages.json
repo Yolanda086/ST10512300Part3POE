@@ -1,2 +1,7 @@
 {"Message":"Hi Mike, can you join us for dinner tonight?","Recipient":"+27718693002","MessageHash":"00:0:HITONIGHT","MessageID":"0012345678"}
 {"Message":"Hi Mike, can you join us for dinner tonight?","Recipient":"+27718693002","MessageHash":"00:0:HITONIGHT","MessageID":"0012345678"}
+{"Message":"Hi Mike, can you join us for dinner tonight?","Recipient":"+27718693002","MessageHash":"00:0:HITONIGHT","MessageID":"0012345678"}
+{"Sender":"Kyle Smith","Message":"Where are you? You are late! I have asked you to be on time.","Recipient":"+27838884567","MessageHash":"46:1:WHERETIME","MessageID":"4636785383"}
+{"Sender":"Kyle Smith","Message":"Ok, I am leaving without you.","Recipient":"+27838884567","MessageHash":"24:4:OKYOU","MessageID":"2452148083"}
+{"Message":"Hi Mike, can you join us for dinner tonight?","Recipient":"+27718693002","MessageHash":"00:0:HITONIGHT","MessageID":"0012345678"}
+{"Sender":"Kyle Smith","Message":"It is dinner time!","Recipient":"+27838884567","MessageHash":"15:3:ITTIME","MessageID":"1564682864"}
